@@ -5,7 +5,7 @@ import Login from './login';
 import Teachers from './teachers';
 import './App.css';  // Importing a CSS file to style the app
 // import { MathComponent } from 'react-mathjax2'
-
+// what the crap is this
 function App() {
   const [category, setCategory] = useState("");
   const [topic, setTopic] = useState("");
