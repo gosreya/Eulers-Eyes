@@ -18,6 +18,7 @@ function App() {
     console.log("type");
     console.log(type);
 
+    
     if (type === "student") {
         return StudentApp();
     } else {
@@ -71,10 +72,10 @@ function StudentApp() {
                 const data = await response.json();
                 console.log(data);
                 // console.log(JSON.stringify(data));
-                console.log(data["q"]);
-                console.log(data["q"]["q"]);
-                console.log(data["q"]["q"][0]);
-                console.log(data["q"]["q"][0]["question_text"]);
+                // console.log(data["q"]);
+                // console.log(data["q"]["q"]);
+                // console.log(data["q"]["q"][0]);
+                // console.log(data["q"]["q"][0]["question_text"]);
                 setAllQuestions(data);
             }
             else {
@@ -183,7 +184,7 @@ function StudentApp() {
                         <div className="question-box" tabIndex={0}>
                             <MathJaxContext>
                             <MathJax>
-                                {allquestions && allquestions["q"] && allquestions["q"]["q"] && allquestions["q"]["q"][0] && allquestions["q"]["q"][0]["question_text"] && allquestions["q"]["q"][0]["question_text"]}
+                                {allquestions && allquestions[category] && allquestions[category][topic] && allquestions[category][topic][0] && allquestions[category][topic][0]["question_text"] && ` ${allquestions[category][topic][0]["question_text"]}`}
                             </MathJax>
                             </MathJaxContext>
                         </div>
@@ -192,7 +193,7 @@ function StudentApp() {
                                 Answer:&nbsp;
                                 <MathJaxContext>
                                 <MathJax>
-                                {allquestions && allquestions["q"] && allquestions["q"]["q"] && allquestions["q"]["q"][0] && allquestions["q"]["q"][0]["question_text"] && allquestions["q"]["q"][0]["question_answer"]}
+                                {allquestions && allquestions[category] && allquestions[category][topic] && allquestions[category][topic][0] && allquestions[category][topic][0]["question_text"] && ` ${allquestions[category][topic][0]["question_answer"]}`}
                                 </MathJax>
                                 </MathJaxContext>
                             </div>
