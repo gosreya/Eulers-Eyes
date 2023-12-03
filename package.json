@@ -1,0 +1,42 @@
+{
+  "name": "euler",
+  "version": "0.1.0",
+  "description": "euler front end",
+  "main": "euler/js/main.jsx",
+  "author": "bsarabes",
+  "license": "MIT",
+  "repository": {},
+  "devDependencies": {
+    "@babel/core": ">=7.15.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": ">=7.15.6",
+    "@babel/preset-react": ">=7.14.5",
+    "babel-eslint": ">=10.1.0",
+    "babel-loader": ">=8.2.2",
+    "better-react-mathjax": "2.0.3",
+    "css-loader": "^6.8.1",
+    "eslint": ">=7.32.0",
+    "eslint-config-airbnb": ">=18.2.1",
+    "eslint-plugin-import": ">=2.24.2",
+    "eslint-plugin-jsx-a11y": ">=6.4.1",
+    "eslint-plugin-react": ">=7.26.0",
+    "eslint-plugin-react-hooks": ">=4.2.0",
+    "js-cookie": "3.0.5",
+    "regenerator-runtime": "^0.14.0",
+    "webpack": ">=5.54.0",
+    "webpack-cli": ">=4.8.0",
+    "style-loader": "3.3.3"
+  },
+  "dependencies": {
+    "core-js": "^3.33.3",
+    "moment": ">=2.29.1",
+    "prop-types": ">=15.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-infinite-scroll-component": ">=6.1.0",
+    "react-router-dom": "^6.20.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

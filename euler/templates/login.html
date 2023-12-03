@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Euler's Eyes</title>
+</head>
+
+<body>
+    <div id="title-bar" class="container">
+        <div class="row top-Row" id="topper">
+            <div class="col insta-log">
+            </div>
+            <div class="col top-text">
+                <h1>Euler's Eyes</h1>
+            </div>
+            <div class="col unnecessary">
+
+            </div>
+            <div class="col unnecessary">
+
+            </div>
+            <div class="col unnecessary">
+
+            </div>
+
+            <div id="explore" class="col top-text">
+
+            </div>
+            <div id="bar" class="col top-text">
+                <b>|</b>
+            </div>
+            <div id="name" class="col top-text">
+
+            </div>
+        </div>
+    </div>
+    <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+        <input type="text" name="username" required />
+        <input type="password" name="password" required />
+        <input type="submit" value="login" />
+        <input type="hidden" name="operation" value="login" />
+    </form>
+    <a href="/accounts/create/">CREATE ACCOUNT</a>
+
+</body>
+
+</html>
