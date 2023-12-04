@@ -69,58 +69,86 @@ const QuestionForm = () => {
     };
   
     return (
-        <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Category:
-          <textarea type="text" name="category" value={formData.category} onChange={handleChange} required />
-        </label>
-  
-        <label>
-          Topic:
-          <textarea type="text" name="topic" value={formData.topic} onChange={handleChange} required />
-        </label>
-  
-        <label>
-          Question:
-          <textarea name="question" value={formData.question} onChange={handleChange} required />
-        </label>
-  
-        <label>
-          Answer:
-          <textarea name="answer" value={formData.answer} onChange={handleChange} required />
-        </label>
-  
-        <label>
-          Variables:
-          {formData.variables.map((variable, index) => (
-            <div key={index}>
-              <input
-                type="text"
-                value={variable}
-                onChange={(e) => handlevariableChange(index, e.target.value)}
-                required
-              />
+      <div className='content' stlye={{paddingTop:-100}}>
+          <h2>Add Templated Questions</h2>
+          <div className='content'>
+            <form onSubmit={handleSubmit}>
+              <div className="grid-container">
+                <div className="grid-item">
+                  <label>Category:</label>
+                </div>
+                <div className="grid-item">
+                  <textarea type="text" name="category" value={formData.category} onChange={handleChange} required />
+                </div>
+
+                <div className="grid-item">
+                  <label> Topic:</label>
+                </div>
+
+                <div className="grid-item">
+                  <textarea type="text" name="topic" value={formData.topic} onChange={handleChange} required />
+                </div>
+                
+                <div className="grid-item">
+                  <label>Question:</label>
+                </div>
+
+                <div className="grid-item">
+                  <textarea name="question" value={formData.question} onChange={handleChange} required />
+                </div>
+
+                <div className="grid-item">
+                  <label>Answer:</label>
+                </div>
+
+                <div className='grid-item'>
+                  <textarea name="answer" value={formData.answer} onChange={handleChange} required />
+                </div> 
+
+                <div className='grid-item'>
+                </div>
+                <div className='grid-item'>
+                  <button type="button" onClick={handleAddvariable} className='custom-button'>
+                      Add Variable
+                  </button>
+                </div>
+                
+                <div className="grid-item">
+                  <label> Variables:</label>
+                </div>
+                <div className="grid-item">
+                    {formData.variables.map((variable, index) => (
+                      <div key={index}>
+                        <input
+                          type="text"
+                          value={variable}
+                          onChange={(e) => handlevariableChange(index, e.target.value)}
+                          style={{margin:'5px'}}
+                          required
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+
+                <div className="grid-item">
+                  <label>Variations:</label>
+                </div>
+                <div className="grid-item">
+                  <input
+                    type="number"
+                    name="variations"
+                    value={formData.variations}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                      
+                <div className="grid-item"><button type="submit" className='custom-button'>Submit</button></div> 
             </div>
-          ))}
-          <button type="button" onClick={handleAddvariable}>
-            Add Variable
-          </button>
-        </label>
-  
-        <label>
-          Variations:
-          <input
-            type="number"
-            name="variations"
-            value={formData.variations}
-            onChange={handleChange}
-            required
-          />
-        </label>
-  
-        <button type="submit">Submit</button>
-      </form>
+          </form>
+          </div>
+          
       </div>
     );
   };

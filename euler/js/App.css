@@ -24,7 +24,6 @@ html, body {
     text-align: center;
     font-size: 1.5em;
 
-    padding: 0.5em 0;
 }
 
 .header h2 {
@@ -104,3 +103,15 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+.grid-container {
+    margin-left: 500px;
+    margin-right: 500px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+  .grid-item {
+    font-size: 15px;
+    text-align: center;
+  }
