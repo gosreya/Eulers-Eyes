@@ -105,11 +105,14 @@ html, body {
 }
 
 .grid-container {
-    margin-left: 500px;
-    margin-right: 500px;
+    place-items: center;
+    padding:auto;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+    grid-gap:10px;
+    grid-template-columns: 120px 120px;
+    margin:auto;
+    justify-content: center;
+    justify-items: left;
   }
   .grid-item {
     font-size: 15px;

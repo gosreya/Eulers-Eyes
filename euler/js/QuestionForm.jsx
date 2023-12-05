@@ -57,15 +57,14 @@ const QuestionForm = () => {
       } catch (error) {
         console.error('Error submitting question:', error.message);
       }
-
       setFormData({
-        category: '',
-        topic: '',
+        ...formData,
         question: '',
         answer: '',
         variables: [''], // Initial empty value
         variations: 1,
       });
+      
     };
   
     return (
@@ -75,18 +74,46 @@ const QuestionForm = () => {
             <form onSubmit={handleSubmit}>
               <div className="grid-container">
                 <div className="grid-item">
-                  <label>Category:</label>
+                  <label for="category">Category:</label>
                 </div>
                 <div className="grid-item">
-                  <textarea type="text" name="category" value={formData.category} onChange={handleChange} required />
+                    {<select id="category" name="category" onChange={handleChange} required>
+                      <option value="" selected={true} disabled>Select A Category</option>
+                      <option value="Algebra">Algebra</option>
+                      <option value="Precalculus">Precalculus</option>
+                      <option value="Calculus">Calculus</option>
+                    </select>}
                 </div>
 
                 <div className="grid-item">
                   <label> Topic:</label>
                 </div>
-
                 <div className="grid-item">
-                  <textarea type="text" name="topic" value={formData.topic} onChange={handleChange} required />
+                  {/* <textarea type="text" name="topic" value={formData.topic} onChange={handleChange} required /> */}
+                  {formData['category'] === '' && 
+                  <div></div>
+                  }
+                  {formData['category'] === 'Algebra' && 
+                    <select id="topic" name="topic" onChange={handleChange} required>
+                      <option value="" disabled selected={true}>Select A Topic</option>
+                      <option value="Equations">Equations</option>
+                      <option value="Polynomials">Polynomials</option>
+                    </select>
+                  }
+                  {formData['category'] === 'Precalculus' && 
+                    <select id="topic" name="topic" onChange={handleChange} required>
+                      <option value="" disabled selected={true}>Select A Topic</option>
+                      <option value="Trigonometry">Trigonometry</option>
+                    <option value="Functions">Functions</option>
+                  </select>
+                  }
+                  {formData['category'] === 'Calculus' && 
+                    <select id="topic" name="topic" onChange={handleChange} required>
+                      <option value="" disabled selected={true}>Select A Topic</option>
+                      <option value="Integrals">Integrals</option>
+                    <option value="Differentiation">Differentiation</option>
+                  </select>
+                  }
                 </div>
                 
                 <div className="grid-item">
@@ -94,7 +121,7 @@ const QuestionForm = () => {
                 </div>
 
                 <div className="grid-item">
-                  <textarea name="question" value={formData.question} onChange={handleChange} required />
+                  <textarea name="question" value={formData.question} onChange={handleChange} required placeholder='LaTeX format example: \(6 = <m> * x + <b> \)'/>
                 </div>
 
                 <div className="grid-item">
@@ -102,7 +129,7 @@ const QuestionForm = () => {
                 </div>
 
                 <div className='grid-item'>
-                  <textarea name="answer" value={formData.answer} onChange={handleChange} required />
+                  <textarea name="answer" value={formData.answer} onChange={handleChange} required placeholder='Example: (6 - <b>) / <m>' />
                 </div> 
 
                 <div className='grid-item'>
@@ -121,6 +148,7 @@ const QuestionForm = () => {
                       <div key={index}>
                         <input
                           type="text"
+                          placeholder='var min max'
                           value={variable}
                           onChange={(e) => handlevariableChange(index, e.target.value)}
                           style={{margin:'5px'}}
@@ -140,6 +168,7 @@ const QuestionForm = () => {
                     name="variations"
                     value={formData.variations}
                     onChange={handleChange}
+                    style={{marginLeft:'4px'}}
                     required
                   />
                 </div>
