@@ -223,7 +223,7 @@ function StudentApp() {
                             <div className="answer-box" tabIndex={0}>
                                 <MathJaxContext>
                                 <MathJax>
-                                    {allquestions && allquestions[category] && allquestions[category][topic] && allquestions[category][topic][tempCount] && allquestions[category][topic][tempCount]["answer_text"] && ` ${allquestions[category][topic][tempCount]["answer_text"]}`}
+                                    {allquestions && allquestions[category] && allquestions[category][topic] && allquestions[category][topic][tempCount] && allquestions[category][topic][tempCount]["question_answer"] && ` ${allquestions[category][topic][tempCount]["question_answer"]}`}
                                 </MathJax>
                                 </MathJaxContext>
                             </div>

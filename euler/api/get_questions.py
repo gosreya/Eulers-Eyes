@@ -41,6 +41,10 @@ def get_questions():
 
     print(all_questions)
 
+    if len(all_questions) == 0:
+        all_questions = {}
+        # TODO: FILL THIS OUT
+
     # create a dictionary that maps question category to question topic to the items in all_questions
     # this is the dictionary that will be returned
     to_ret = {}
